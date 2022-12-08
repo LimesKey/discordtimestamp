@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: Poppins;
+    src: url('Poppins.ttf');
+}
+
+@layer base {
+    * {
+        @apply font-Poppins;
+    }
+
+    input {
+        color-scheme: dark;
+    }
+
+    ::-webkit-calendar-picker-indicator {
+        cursor: pointer;
+    }
+}

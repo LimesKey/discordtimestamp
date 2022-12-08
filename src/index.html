@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+
+<html lang="en" class="dark transition-colors duration-300">
+
+<head>
+    <title>Discord TimeStamp Generator</title>
+    <link rel="stylesheet" href="assets/global.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="keywords" content="discord, timestamp, message">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="author" content="InspectorRex">
+    <link rel="shortcut icon" href="assets/logo.webp" type="image/webp">
+    <meta content="by InspectorRex" property="og:site_name">
+    <meta content="Discord TimeStamp Generator" property="og:title">
+    <meta content="Easily generate a Dynamic date-time display for your Discord Messages" property="og:description">
+    <meta name="description" content="Easily generate a Dynamic date-time display for your Discord Messages.">
+    <meta name="theme-color" content="#FF0000">
+    <meta property="og:image" content="assets/logo.webp" />
+    <script async src="https://arc.io/widget.min.js#xTme71zo"></script>
+</head>
+
+<body class="w-full min-h-screen bg-slate-900 flex flex-col relative">
+    <notification id="notification"
+        class="hidden select-none animate-fly-in w-max fixed text-gray-200 font-bold bg-black p-4 bg-opacity-80 rounded-3xl top-8 mx-auto left-0 right-0">
+        ✔️ Copied to Clipboard
+    </notification>
+    <nav class="flex md:px-16 p-8 items-center justify-between">
+        <div class="flex space-x-3 items-center">
+            <img class="w-8 md:w-14 md:h-14 aspect-square" src="assets/logo.webp" alt="Logo">
+            <div class="items-center text-gray-200 ">
+                <p class="md:font-semibold text-sm md:text-lg">Discord Timestamp Generator</p>
+                <p class="hidden md:block text-sm">Easily generate a Dynamic date-time display for your Discord
+                    Messages.</p>
+            </div>
+        </div>
+    </nav>
+    <main class="w-full">
+        <div
+            class="flex md:flex-row flex-col items-center place-content-center md:space-x-12 md:mt-12 mt-4 text-gray-200">
+            <div>
+                <label for="date" class="flex items-center space-x-2 py-3 text-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6">
+                        <path
+                            d="M12.75 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM7.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8.25 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM9.75 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM10.5 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM12.75 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM14.25 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 13.5a.75.75 0 100-1.5.75.75 0 000 1.5z" />
+                        <path fill-rule="evenodd"
+                            d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <p class="font-semibold text-xl">Date</p>
+                </label>
+                <input id="date" class="cursor-pointer bg-slate-800 rounded-xl p-5 font-semibold text-xl text-gray-300"
+                    type="date" />
+            </div>
+            <div>
+                <label for="time" class="flex items-center space-x-2 py-3 text-gray-400">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6">
+                        <path fill-rule="evenodd"
+                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z"
+                            clip-rule="evenodd" />
+                    </svg>
+                    <p class="font-semibold text-xl">Time</p>
+                </label>
+                <div class="flex items-center space-x-3 text-gray-300">
+                    <input id="time"
+                        class="cursor-pointer bg-slate-800 rounded-xl p-5 text-xl text-gray-300 font-semibold"
+                        type="time" />
+                </div>
+            </div>
+        </div>
+        <script src="assets/js/code.js"></script>
+        <script src="assets/js/quickselection.js"></script>
+        <div class="m-8 text-gray-300 font-semibold">
+            <div class="flex items-center flex-wrap gap-2 place-content-center" id="quickselections">
+                <!-- Javascript Inserted -->
+            </div>
+        </div>
+        <div class="flex w-full items-center gap-4 flex-wrap my-12 place-content-center text-gray-300 " id="selections">
+            <!-- Javascript Inserted -->
+        </div>
+        <div onclick="togglehowto()"
+            class="m-auto text-gray-300 border-2 rounded-lg border-gray-400 space-x-1 p-3 px-6 w-max flex hover:bg-slate-700 cursor-pointer">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd"
+                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                    clip-rule="evenodd" />
+            </svg>
+            <p>How to use?</p>
+        </div>
+    </main>
+    <howto
+        class="hidden bg-slate-800 p-12 rounded-lg z-10 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-gray-400 flex-col items-center place-content-center space-y-5">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"
+            class="w-8 ml-auto fill-gray-200 cursor-pointer" onclick="togglehowto()">
+            <path fill-rule="evenodd"
+                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                clip-rule="evenodd" />
+        </svg>
+        <div class="flex items-center space-x-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 fill-gray-300">
+                <path fill-rule="evenodd"
+                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                    clip-rule="evenodd" />
+            </svg>
+            <h1 class="text-xl font-semibold">How to use</h1>
+        </div>
+        <div>
+            <p>1. Select a <span onclick="datepicker.showPicker()"
+                    class="text-blue-400 font-bold cursor-pointer">Date</span> and <span
+                    onclick="timepicker.showPicker()" class="text-blue-400 font-semibold cursor-pointer">Time</span></p>
+        </div>
+        <div>
+            <p>2. Click a Timestamp Displayed Above</p>
+        </div>
+        <div class="flex flex-col">
+            <p>3. Paste the Timestamp into Discord</p>
+            <img class="rounded-xl" src="https://img.inspectorre.xyz/2oZ0zOIY8QQ4" />
+        </div>
+    </howto>
+    <footer class="text-gray-400 text-center m-8 text-sm md:text-base mt-auto">
+        This Website is not made or Affiliated by and with Discord!
+        <br>
+        All Legal requests and claims may only be directed towards <a class="border-b-2 border-gray-400"
+            href="https://inspectorre.xyz">inspectorre.xyz</a>
+    </footer>
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js'
+        data-cf-beacon='{"token": "82697096e3684e549c17d5fa7489259b"}'></script><!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>
