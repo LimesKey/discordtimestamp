@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en" class="dark transition-colors duration-300">
+<html lang="en">
 
 <head>
     <title>Discord TimeStamp Generator</title>
@@ -32,6 +32,15 @@
                 <p class="hidden md:block text-sm">Easily generate a Dynamic date-time display for your Discord
                     Messages.</p>
             </div>
+        </div>
+        <div class="text-gray-400 hover:text-gray-300 cursor-pointer flex space-x-1"
+            onclick="window.open('https://github.com/inspectorrex/discordtimestamp/issues/new');">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                <path fill-rule="evenodd"
+                    d="M3 2.25a.75.75 0 01.75.75v.54l1.838-.46a9.75 9.75 0 016.725.738l.108.054a8.25 8.25 0 005.58.652l3.109-.732a.75.75 0 01.917.81 47.784 47.784 0 00.005 10.337.75.75 0 01-.574.812l-3.114.733a9.75 9.75 0 01-6.594-.77l-.108-.054a8.25 8.25 0 00-5.69-.625l-2.202.55V21a.75.75 0 01-1.5 0V3A.75.75 0 013 2.25z"
+                    clip-rule="evenodd" />
+            </svg>
+            <p class="hidden md:block">Report a Problem</p>
         </div>
     </nav>
     <main class="w-full">
@@ -85,6 +94,33 @@
                     clip-rule="evenodd" />
             </svg>
             <p>How to use?</p>
+        </div>
+        <div class="text-gray-300 flex flex-col gap-3 my-12 m-auto w-5/6 md:w-max">
+            <p class="text-lg font-semibold">So How do Timestamps Work?</p>
+            <p>Discord Timestamps are generated using
+                <span class="p-1 bg-gray-800 rounded-lg">&lt;t:unix_seconds:FORMAT&gt;</span>.
+                <br>
+                Format herby refers to the Available Formats offered by Discord. Easy to Rember using their
+                Corresponding
+                Names
+            </p>
+            <ul class="flex flex-col gap-3">
+                <li><span class="px-1.5 bg-gray-700 rounded-lg font-semibold">R</span> Relative Timestamp (0 seconds
+                    ago)
+                </li>
+                <li><span class="px-1.5 bg-gray-700 rounded-lg font-semibold">D</span> Date Timestamp (March 5, 2020)
+                </li>
+                <li><span class="px-1.5 bg-gray-700 rounded-lg font-semibold">T</span> Time Timestamp (11:28:27 AM)</li>
+                <li><span class="px-1.5 bg-gray-700 rounded-lg font-semibold">t</span> Short Time Timestamp (11:28 AM)
+                </li>
+                <li><span class="px-1.5 bg-gray-700 rounded-lg font-semibold">F</span> Full Timestamp (Thursday, March
+                    5,
+                    2020
+                    11:28:27 AM)
+                </li>
+            </ul>
+            <p>The Format Above can then easily be sent in a normal Message by Users or Bots. Discord Takes care of the
+                Rest.</p>
         </div>
     </main>
     <howto
