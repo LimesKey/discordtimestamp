@@ -1,39 +1,54 @@
-let currentyear = new Date().getFullYear();
-
 let selections = {
+    "christmas_eve": {
+        name: "🎄 Christmas Eve",
+        date: "12/24"
+    },
     "christmas": {
         name: "🎄 Christmas",
-        date: new Date(currentyear, 11, 24, 00, 00)
+        date: "12/25"
     },
     "new_year": {
         name: "🎆 New Year",
-        date: new Date(currentyear, 11, 31, 00, 00)
+        date: "12/31"
     },
     "pridemonth": {
         name: "🏳️‍🌈 Pride Month",
-        date: new Date(2023, 05, 01, 00, 00)
+        date: "06/01"
     },
     "valentine": {
         name: "💖 Valentine's Day",
-        date: new Date(2023, 01, 14, 00, 00)
+        date: "02/14"
     },
     "easter": {
         name: "🐇 Easter",
-        date: new Date(2023, 03, 09, 00, 00)
+        date: "04/09"
     },
     "st_patricks": {
         name: "☘️ St. Patrick's Day",
-        date: new Date(2023, 02, 17, 00, 00)
-    }
+        date: "03/17"
+    },
 }
 
 function quickselectionsetup() {
+    let current = new Date();
     let parent = document.getElementById("quickselections");
     let days_in_advance = new Date().getTime() + (1000 * 60 * 60 * 24 * 35);
+
     Object.keys(selections).forEach(key => {
         let item = selections[key];
 
-        if (item.date.getTime() - days_in_advance > 0) {
+        let manuelldate = item.date.split("/");
+        let month = parseInt(manuelldate[0]);
+        let day = parseInt(manuelldate[1]);
+        let year = new Date().getFullYear();
+
+        if ((current.getMonth() + 1) > month || (current.getMonth() + 1) == month && current.getDate() > day) {
+            year++
+        }
+
+        console.log("Name: " + item.name + " - " + new Date(year, (month - 1), day));
+
+        if (new Date(year, (month - 1), day) - days_in_advance > 0) {
             return;
         }
 
@@ -43,10 +58,9 @@ function quickselectionsetup() {
         div.innerText = selections[key].name;
         parent.appendChild(div);
 
-        div.addEventListener("click", (event) => {
-            let date = selections[event.target.id].date;
-            datepicker.value = `${date.getFullYear()}-${(date.getMonth() + 1).toString().padStart(2, '0')}-${date.getDate().toString().padStart(2, '0')}`;
-            timepicker.value = `${date.getHours().toString().padStart(2, '0')}:${date.getMinutes().toString().padStart(2, '0')}`;
+        div.addEventListener("click", () => {
+            datepicker.value = `${year}-${month < 10 ? "0" + month : month}-${day}`;
+            timepicker.value = "00:00";
             updateTimes();
         });
     })
