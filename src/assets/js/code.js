@@ -128,21 +128,3 @@ function automaticRelativeDifference(d) {
     }
     return { duration: parseInt(diff), unit: 'seconds' };
 }
-
-// Toggle the HowTo Overlay to be Hidden or Shown
-function togglehowto() {
-    document.getElementsByTagName("howto")[0].classList.toggle("hidden");
-    document.getElementsByTagName("main")[0].classList.toggle("blur-md");
-}
-
-// Toggle the Deep Explainantion HowTo Overlay to be Hidden or Shown
-function toggledeephowto() {
-    document.getElementById("howto_deep").classList.toggle("flex");
-    document.getElementById("howto_deep").classList.toggle("hidden");
-}
-
-document.onkeydown = function (e) {
-    if (e.key == "Escape" && !document.getElementsByTagName("howto")[0].classList.contains("hidden")) {
-        togglehowto();
-    }
-}

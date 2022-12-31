@@ -9,7 +9,7 @@ let selections = {
     },
     "new_year": {
         name: "🎆 New Year",
-        date: "12/31"
+        date: "01/01"
     },
     "pridemonth": {
         name: "🏳️‍🌈 Pride Month",
@@ -46,8 +46,6 @@ function quickselectionsetup() {
             year++
         }
 
-        console.log("Name: " + item.name + " - " + new Date(year, (month - 1), day));
-
         if (new Date(year, (month - 1), day) - days_in_advance > 0) {
             return;
         }
@@ -59,7 +57,7 @@ function quickselectionsetup() {
         parent.appendChild(div);
 
         div.addEventListener("click", () => {
-            datepicker.value = `${year}-${month < 10 ? "0" + month : month}-${day}`;
+            datepicker.value = `${year}-${month < 10 ? "0" + month : month}-${day < 10 ? "0" + day : day}`;
             timepicker.value = "00:00";
             updateTimes();
         });
