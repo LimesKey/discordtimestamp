@@ -28,5 +28,4 @@ function toggleBar(id) {
             item.status = !item.status;
         }
     })
-    console.log(sidebars);
 }
