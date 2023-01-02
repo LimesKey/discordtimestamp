@@ -21,10 +21,16 @@ document.onkeydown = function (evt) {
 };
 
 function toggleBar(id) {
-    document.getElementById(id).classList.toggle("flex");
-    document.getElementById(id).classList.toggle("hidden");
     sidebars.forEach(item => {
         if (item.id === id) {
+            if (item.status) {
+                document.getElementById(id).classList.add("animate-fly-out-left");
+                setTimeout(() => {
+                    document.getElementById(id).classList.add("hidden");
+                }, 750);
+            } else {
+                document.getElementById(id).classList.remove("animate-fly-out-left", "hidden");
+            }
             item.status = !item.status;
         }
     })

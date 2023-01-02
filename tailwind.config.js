@@ -7,8 +7,9 @@ module.exports = {
         'Poppins': ["Poppins", "san-serif"]
       },
       animation: {
-        'fly-in': 'in 1s',
-        'fly-in-right': 'in_right 0.5s'
+        'fly-in': 'in 1s ease-in-out',
+        'fly-in-right': 'in_right 0.8s ease-in-out',
+        'fly-out-left': 'out_left 0.8s ease-in-out'
       },
       keyframes: {
         in: {
@@ -16,8 +17,12 @@ module.exports = {
           '100%': { transform: 'translateY(0px)' }
         },
         in_right: {
-          '0%': { transform: 'translateX(+200px)' },
+          '0%': { transform: 'translateX(+500px)' },
           '100%': { transform: 'translateX(0px)' }
+        },
+        out_left: {
+          '0%': { transform: 'translateX(0px)' },
+          '100%': { transform: 'translateX(+700px)' }
         }
       }
     },

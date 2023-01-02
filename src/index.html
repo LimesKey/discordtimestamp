@@ -20,106 +20,6 @@
 </head>
 
 <body class="w-full min-h-screen bg-slate-900 flex flex-col relative overflow-x-hidden z-0">
-    <div class="hidden flex-col animate-fly-in-right text-gray-300 bg-slate-800 w-full md:w-1/3 h-screen fixed right-0 p-8"
-        id="howto_deep">
-        <div class="w-full flex justify-between items-center">
-            <p class="text-2xl font-semibold">Timestamps Explained</p>
-            <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleBar('howto_deep')" viewBox="0 0 24 24"
-                fill="currentColor" class="w-10 text-gray-400 hover:text-gray-300 cursor-pointer">
-                <path fill-rule="evenodd"
-                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                    clip-rule="evenodd" />
-            </svg>
-        </div>
-        <div class="w-full flex space-x-3 border-orange-500 border-2 rounded-lg p-4 mt-8">
-            <div>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                    <path fill-rule="evenodd"
-                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
-                        clip-rule="evenodd" />
-                </svg>
-            </div>
-            <p>
-                Discord Timestamps are rendered by the End-Users Computer, so the Timestamp will display different
-                Results for everyone in different Timezones!
-            </p>
-        </div>
-        <div class="mt-12">
-            <p>Discord Timestamps are generated using
-                <span class="p-1 bg-gray-600 rounded-lg">&lt;t:unix_seconds:FORMAT&gt;</span>.
-                <br>
-                Format herby refers to the Available Formats offered by Discord.
-                <br>
-                Easy to Rember using their Corresponding Names
-            </p>
-        </div>
-        <ul class="flex flex-col gap-3 mt-8 bg-slate-700 p-4 rounded-lg">
-            <li><span class="px-1.5 bg-gray-800 rounded-lg font-semibold">R</span> Relative Timestamp (0 seconds
-                ago)
-            </li>
-            <li><span class="px-1.5 bg-gray-800 rounded-lg font-semibold">D</span> Date Timestamp (March 5, 2020)
-            </li>
-            <li><span class="px-1.5 bg-gray-800 rounded-lg font-semibold">T</span> Time Timestamp (11:28:27 AM)</li>
-            <li><span class="px-1.5 bg-gray-800 rounded-lg font-semibold">t</span> Short Time Timestamp (11:28 AM)
-            </li>
-            <li><span class="px-1.5 bg-gray-800 rounded-lg font-semibold">F</span> Full Timestamp (Thursday, March
-                5,
-                2020
-                11:28:27 AM)
-            </li>
-        </ul>
-        <p class="mt-6">The Format Above can then easily be sent in a normal Message by Users or Bots.</p>
-        <div class="mt-8 p-4 bg-slate-900 rounded-md">
-            <div class="w-full p-2 bg-slate-800 flex space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                    <path fill-rule="evenodd"
-                        d="M2.25 6a3 3 0 013-3h13.5a3 3 0 013 3v12a3 3 0 01-3 3H5.25a3 3 0 01-3-3V6zm3.97.97a.75.75 0 011.06 0l2.25 2.25a.75.75 0 010 1.06l-2.25 2.25a.75.75 0 01-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 010-1.06zm4.28 4.28a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"
-                        clip-rule="evenodd" />
-                </svg>
-                <p>mybot/timestamp.js</p>
-            </div>
-            <div class="py-4">
-                <span class="text-blue-500">message</span>.<span class="text-teal-500">reply</span>("<span
-                    class="text-amber-700">Your Reminder will
-                    alert you
-                    &lt;t:2396027640:R&gt;</span>");
-                <br><br>
-                <p class="text-green-700">// Sends the Message to Discord as</p>
-                > Your Reminder will alert you <span class="p-1 bg-gray-700 rounded-lg">in 32 Years</span>
-            </div>
-        </div>
-    </div>
-    <div class="hidden animate-fly-in-right text-gray-300 justify-center flex-col gap-8 items-center bg-slate-800 w-full md:w-1/3 h-screen absolute right-0 p-4"
-        id="howto">
-        <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleBar('howto')" viewBox="0 0 24 24" fill="currentColor"
-            class="w-10 cursor-pointer absolute top-8 right-8">
-            <path fill-rule="evenodd"
-                d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                clip-rule="evenodd" />
-        </svg>
-        <div class="flex items-center space-x-1">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 fill-gray-300">
-                <path fill-rule="evenodd"
-                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
-                    clip-rule="evenodd" />
-            </svg>
-            <h1 class="text-xl font-semibold">How to use</h1>
-        </div>
-        <div>
-            <p>1. Select a <span onclick="datepicker.showPicker()"
-                    class="text-blue-400 font-bold cursor-pointer">Date</span> and <span
-                    onclick="timepicker.showPicker()" class="text-blue-400 font-semibold cursor-pointer">Time</span>
-            </p>
-        </div>
-        <div>
-            <p>2. Click a Timestamp Displayed Above</p>
-        </div>
-        <div class="flex flex-col">
-            <p>3. Paste the Timestamp into Discord</p>
-            <img loading="lazy" alt="Discord Screenshot" class="rounded-xl" src="assets/screenshot.webp" />
-        </div>
-    </div>
-    <script defer src="assets/js/sidebar.js"></script>
     <notification id="notification"
         class="hidden select-none animate-fly-in w-max fixed text-gray-200 font-bold bg-black p-4 bg-opacity-80 rounded-3xl top-8 mx-auto left-0 right-0">
         ✔️ Copied to Clipboard
@@ -220,6 +120,109 @@
         All Legal requests and claims may only be directed towards <a class="border-b-2 border-gray-400"
             href="https://inspectorre.xyz">inspectorre.xyz</a>
     </footer>
+    <!-- Sidebars -->
+    <!-- Timestamps Explained -->
+    <div class="hidden flex-col animate-fly-in-right text-gray-300 bg-slate-800 w-full md:w-1/3 min-h-screen fixed right-0 p-8"
+        id="howto_deep">
+        <div class="w-full flex justify-between items-center">
+            <p class="text-2xl font-semibold">Timestamps Explained</p>
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleBar('howto_deep')" viewBox="0 0 24 24"
+                fill="currentColor" class="w-10 text-gray-400 hover:text-gray-300 cursor-pointer">
+                <path fill-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                    clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="w-full flex space-x-3 border-orange-500 border-2 rounded-lg p-4 mt-8">
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd"
+                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
+                        clip-rule="evenodd" />
+                </svg>
+            </div>
+            <p>
+                Discord Timestamps are rendered by the End-Users Computer, so the Timestamp will display different
+                Results for everyone in different Timezones!
+            </p>
+        </div>
+        <div class="mt-12">
+            <p>Discord Timestamps are generated using
+                <span class="p-1 bg-gray-600 rounded-lg">&lt;t:unix_seconds:FORMAT&gt;</span>.
+                <br>
+                Format herby refers to the Available Formats offered by Discord.
+                <br>
+                Easy to Rember using their Corresponding Names
+            </p>
+        </div>
+        <ul class="flex flex-col gap-3 mt-8 bg-slate-700 p-4 rounded-lg">
+            <li><span class="px-1.5 bg-gray-800 rounded-lg font-semibold">R</span> Relative Timestamp (0 seconds
+                ago)
+            </li>
+            <li><span class="px-1.5 bg-gray-800 rounded-lg font-semibold">D</span> Date Timestamp (March 5, 2020)
+            </li>
+            <li><span class="px-1.5 bg-gray-800 rounded-lg font-semibold">T</span> Time Timestamp (11:28:27 AM)</li>
+            <li><span class="px-1.5 bg-gray-800 rounded-lg font-semibold">t</span> Short Time Timestamp (11:28 AM)
+            </li>
+            <li><span class="px-1.5 bg-gray-800 rounded-lg font-semibold">F</span> Full Timestamp (Thursday, March
+                5,
+                2020
+                11:28:27 AM)
+            </li>
+        </ul>
+        <p class="mt-6">The Format Above can then easily be sent in a normal Message by Users or Bots.</p>
+        <div class="mt-8 p-4 bg-slate-900 rounded-md">
+            <div class="w-full p-2 bg-slate-800 flex space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                    <path fill-rule="evenodd"
+                        d="M2.25 6a3 3 0 013-3h13.5a3 3 0 013 3v12a3 3 0 01-3 3H5.25a3 3 0 01-3-3V6zm3.97.97a.75.75 0 011.06 0l2.25 2.25a.75.75 0 010 1.06l-2.25 2.25a.75.75 0 01-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 010-1.06zm4.28 4.28a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"
+                        clip-rule="evenodd" />
+                </svg>
+                <p>mybot/timestamp.js</p>
+            </div>
+            <div class="py-4">
+                <span class="text-blue-500">message</span>.<span class="text-teal-500">reply</span>("<span
+                    class="text-amber-700">Your Reminder will
+                    alert you
+                    &lt;t:2396027640:R&gt;</span>");
+                <br><br>
+                <p class="text-green-700">// Sends the Message to Discord as</p>
+                > Your Reminder will alert you <span class="p-1 bg-gray-700 rounded-lg">in 32 Years</span>
+            </div>
+        </div>
+    </div>
+    <!-- Howto -->
+    <div class="hidden animate-fly-in-right text-gray-300 bg-slate-800 w-full md:w-1/3 min-h-screen fixed right-0 p-8"
+        id="howto">
+        <div class="w-full flex justify-between items-center">
+            <p class="text-2xl font-semibold">How to use this Website</p>
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleBar('howto')" viewBox="0 0 24 24" fill="currentColor"
+                class="w-10 text-gray-400 hover:text-gray-300 cursor-pointer">
+                <path fill-rule="evenodd"
+                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
+                    clip-rule="evenodd" />
+            </svg>
+        </div>
+        <div class="flex items-center space-x-3 mt-8">
+            <p class="border-gray-200 text-xl font-bold border-2 rounded-full w-8 h-8 text-center">1</p>
+            <p>Select a <span onclick="datepicker.showPicker()"
+                    class="text-blue-400 font-bold cursor-pointer">Date</span> and <span
+                    onclick="timepicker.showPicker()" class="text-blue-400 font-semibold cursor-pointer">Time</span>
+            </p>
+        </div>
+        <div class="flex items-center space-x-3 mt-8">
+            <p class="border-gray-200 text-xl font-bold border-2 rounded-full w-8 h-8 text-center">2</p>
+            <p>Click on a Timestamp from the Selection</p>
+        </div>
+        <div class="flex flex-col">
+            <div class="flex items-center space-x-3 mt-8">
+                <p class="border-gray-200 text-xl font-bold border-2 rounded-full w-8 h-8 text-center">3</p>
+                <p>Paste the Timestamp into Discord</p>
+            </div>
+            <img loading="lazy" alt="Discord Screenshot" class="rounded-xl mt-8" src="assets/screenshot.webp" />
+        </div>
+    </div>
+    <script defer src="assets/js/sidebar.js"></script>
 </body>
 
 </html>
