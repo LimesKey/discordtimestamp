@@ -7,4 +7,4 @@
 
 ### 🤝 Special Thanks to 
 - **thomzas_wchn#3680** for Creating the Logo
-- [**LimesKey**](http://https://github.com/LimesKey "**LimesKey**") for Testing and Suggestions
+- [**LimesKey**](https://github.com/LimesKey "**LimesKey**") for Testing and Suggestions

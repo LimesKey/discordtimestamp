@@ -562,32 +562,8 @@ input {
   right: 0px;
 }
 
-.top-0 {
-  top: 0px;
-}
-
-.-top-28 {
-  top: -7rem;
-}
-
-.-top-10 {
-  top: -2.5rem;
-}
-
-.right-1\/2 {
-  right: 50%;
-}
-
-.-top-14 {
-  top: -3.5rem;
-}
-
 .-top-12 {
   top: -3rem;
-}
-
-.left-1\/2 {
-  left: 50%;
 }
 
 .z-0 {
@@ -706,7 +682,7 @@ input {
 
 @keyframes in_right {
   0% {
-    transform: translateX(+500px);
+    transform: translateX(+700px);
   }
 
   100% {
@@ -874,9 +850,9 @@ input {
   background-color: rgb(30 41 59 / var(--tw-bg-opacity));
 }
 
-.bg-gray-500 {
+.bg-gray-700 {
   --tw-bg-opacity: 1;
-  background-color: rgb(107 114 128 / var(--tw-bg-opacity));
+  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
 }
 
 .bg-gray-600 {
@@ -892,15 +868,6 @@ input {
 .bg-gray-800 {
   --tw-bg-opacity: 1;
   background-color: rgb(31 41 55 / var(--tw-bg-opacity));
-}
-
-.bg-gray-700 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(55 65 81 / var(--tw-bg-opacity));
-}
-
-.bg-opacity-80 {
-  --tw-bg-opacity: 0.8;
 }
 
 .p-4 {
@@ -919,12 +886,12 @@ input {
   padding: 0.75rem;
 }
 
-.p-1 {
-  padding: 0.25rem;
-}
-
 .p-2 {
   padding: 0.5rem;
+}
+
+.p-1 {
+  padding: 0.25rem;
 }
 
 .p-7 {
@@ -1028,10 +995,6 @@ input {
   color: rgb(96 165 250 / var(--tw-text-opacity));
 }
 
-.opacity-75 {
-  opacity: 0.75;
-}
-
 .transition-colors {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
@@ -1074,24 +1037,8 @@ input {
   color: rgb(209 213 219 / var(--tw-text-opacity));
 }
 
-.group:hover .group-hover\:absolute {
-  position: absolute;
-}
-
-.group:hover .group-hover\:block {
-  display: block;
-}
-
 .group:hover .group-hover\:inline-block {
   display: inline-block;
-}
-
-.group:hover .group-hover\:flex {
-  display: flex;
-}
-
-.group:hover .group-hover\:hidden {
-  display: none;
 }
 
 @media (min-width: 768px) {
@@ -1147,14 +1094,6 @@ input {
 
   .md\:font-semibold {
     font-weight: 600;
-  }
-
-  .group:hover .md\:group-hover\:block {
-    display: block;
-  }
-
-  .group:hover .md\:group-hover\:inline-block {
-    display: inline-block;
   }
 
   .group:hover .md\:group-hover\:hidden {

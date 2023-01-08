@@ -17,7 +17,7 @@ module.exports = {
           '100%': { transform: 'translateY(0px)' }
         },
         in_right: {
-          '0%': { transform: 'translateX(+500px)' },
+          '0%': { transform: 'translateX(+700px)' },
           '100%': { transform: 'translateX(0px)' }
         },
         out_left: {
