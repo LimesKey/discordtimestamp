@@ -16,17 +16,17 @@
     <meta name="description" content="Easily generate a Dynamic date-time display for your Discord Messages.">
     <meta name="theme-color" content="#FF0000">
     <meta property="og:image" content="assets/logo.webp" />
-    <script async src="https://arc.io/widget.min.js#xTme71zo"></script>
+    <!-- <script async src="https://arc.io/widget.min.js#xTme71zo"></script> -->
 </head>
 
-<body class="w-full min-h-screen bg-slate-900 flex flex-col relative overflow-x-hidden z-0">
+<body class="w-full min-h-screen bg-slate-900 flex flex-col relative">
     <notification id="notification"
         class="hidden select-none animate-fly-in w-max fixed text-gray-200 font-bold bg-black p-4 rounded-3xl top-8 mx-auto left-0 right-0">
         ✔️ Copied to Clipboard
     </notification>
     <nav class="flex md:px-16 p-8 items-center justify-between">
         <div class="flex space-x-3 items-center">
-            <img class="w-8 md:w-14 md:h-14 aspect-square" src="assets/logo.webp" alt="Logo">
+            <img class="w-8 md:w-14 md:h-14 select-none pointer-events-none" src="assets/logo.webp" alt="Logo">
             <div class="items-center text-gray-200 ">
                 <p class="md:font-semibold text-sm md:text-lg">Discord Timestamp Generator</p>
                 <p class="hidden md:block text-sm">Easily generate a Dynamic date-time display for your Discord
@@ -133,7 +133,8 @@
     </footer>
     <!-- Sidebars -->
     <!-- Timestamps Explained -->
-    <div class="hidden flex-col animate-fly-in-right text-gray-300 bg-slate-800 w-full md:w-1/3 min-h-screen fixed right-0 p-8"
+    <div class="min-w-full min-h-screen absolute hidden" id="sidebar"></div>
+    <div class="hidden animate-fly-in-right text-gray-300 bg-slate-800 w-full lg:w-1/2 xl:w-1/3 min-h-full fixed right-0 p-8"
         id="howto_deep">
         <div class="w-full flex justify-between items-center">
             <p class="text-2xl font-semibold">Timestamps Explained</p>

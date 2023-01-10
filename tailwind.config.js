@@ -17,12 +17,12 @@ module.exports = {
           '100%': { transform: 'translateY(0px)' }
         },
         in_right: {
-          '0%': { transform: 'translateX(+700px)' },
+          '0%': { transform: 'translateX(+100%)' },
           '100%': { transform: 'translateX(0px)' }
         },
         out_left: {
           '0%': { transform: 'translateX(0px)' },
-          '100%': { transform: 'translateX(+700px)' }
+          '100%': { transform: 'translateX(+100%)' }
         }
       }
     },
