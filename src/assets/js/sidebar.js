@@ -8,6 +8,10 @@ let sidebars = [
     {
         id: "howto",
         status: false,
+    },
+    {
+        id: "history",
+        status: false,
     }
 ]
 
