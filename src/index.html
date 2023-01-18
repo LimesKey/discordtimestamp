@@ -19,9 +19,8 @@
     <script async src="https://arc.io/widget.min.js#xTme71zo"></script>
 </head>
 
-<body class="w-full min-h-screen bg-slate-900 flex flex-col relative">
-    <notification id="notification"
-        class="hidden select-none animate-fly-in w-max fixed text-gray-200 font-bold bg-black p-4 rounded-3xl top-8 mx-auto left-0 right-0">
+<body class="w-full min-h-screen bg-slate-900 flex flex-col relative overflow-x-clip">
+    <notification id="notification" class="hidden select-none animate-fly-in w-max fixed text-gray-200 font-bold bg-black p-4 rounded-3xl top-8 mx-auto left-0 right-0">
         ✔️ Copied to Clipboard
     </notification>
     <nav class="flex md:px-16 p-8 items-center justify-between">
@@ -36,52 +35,33 @@
         <div class="flex text-gray-400 space-x-4">
             <div class="hover:text-gray-300 cursor-pointer flex space-x-1" onclick="toggleBar('howto_deep')">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                    <path fill-rule="evenodd"
-                        d="M19.449 8.448L16.388 11a4.52 4.52 0 010 2.002l3.061 2.55a8.275 8.275 0 000-7.103zM15.552 19.45L13 16.388a4.52 4.52 0 01-2.002 0l-2.55 3.061a8.275 8.275 0 007.103 0zM4.55 15.552L7.612 13a4.52 4.52 0 010-2.002L4.551 8.45a8.275 8.275 0 000 7.103zM8.448 4.55L11 7.612a4.52 4.52 0 012.002 0l2.55-3.061a8.275 8.275 0 00-7.103 0zm8.657-.86a9.776 9.776 0 011.79 1.415 9.776 9.776 0 011.414 1.788 9.764 9.764 0 010 10.211 9.777 9.777 0 01-1.415 1.79 9.777 9.777 0 01-1.788 1.414 9.764 9.764 0 01-10.212 0 9.776 9.776 0 01-1.788-1.415 9.776 9.776 0 01-1.415-1.788 9.764 9.764 0 010-10.212 9.774 9.774 0 011.415-1.788A9.774 9.774 0 016.894 3.69a9.764 9.764 0 0110.211 0zM14.121 9.88a2.985 2.985 0 00-1.11-.704 3.015 3.015 0 00-2.022 0 2.985 2.985 0 00-1.11.704c-.326.325-.56.705-.704 1.11a3.015 3.015 0 000 2.022c.144.405.378.785.704 1.11.325.326.705.56 1.11.704.652.233 1.37.233 2.022 0a2.985 2.985 0 001.11-.704c.326-.325.56-.705.704-1.11a3.016 3.016 0 000-2.022 2.985 2.985 0 00-.704-1.11z"
-                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M19.449 8.448L16.388 11a4.52 4.52 0 010 2.002l3.061 2.55a8.275 8.275 0 000-7.103zM15.552 19.45L13 16.388a4.52 4.52 0 01-2.002 0l-2.55 3.061a8.275 8.275 0 007.103 0zM4.55 15.552L7.612 13a4.52 4.52 0 010-2.002L4.551 8.45a8.275 8.275 0 000 7.103zM8.448 4.55L11 7.612a4.52 4.52 0 012.002 0l2.55-3.061a8.275 8.275 0 00-7.103 0zm8.657-.86a9.776 9.776 0 011.79 1.415 9.776 9.776 0 011.414 1.788 9.764 9.764 0 010 10.211 9.777 9.777 0 01-1.415 1.79 9.777 9.777 0 01-1.788 1.414 9.764 9.764 0 01-10.212 0 9.776 9.776 0 01-1.788-1.415 9.776 9.776 0 01-1.415-1.788 9.764 9.764 0 010-10.212 9.774 9.774 0 011.415-1.788A9.774 9.774 0 016.894 3.69a9.764 9.764 0 0110.211 0zM14.121 9.88a2.985 2.985 0 00-1.11-.704 3.015 3.015 0 00-2.022 0 2.985 2.985 0 00-1.11.704c-.326.325-.56.705-.704 1.11a3.015 3.015 0 000 2.022c.144.405.378.785.704 1.11.325.326.705.56 1.11.704.652.233 1.37.233 2.022 0a2.985 2.985 0 001.11-.704c.326-.325.56-.705.704-1.11a3.016 3.016 0 000-2.022 2.985 2.985 0 00-.704-1.11z" clip-rule="evenodd" />
                 </svg>
                 <p class="hidden md:block">Timestamps Explained</p>
-            </div>
-            <div class="hover:text-gray-300 cursor-pointer flex space-x-1" onclick="toggleBar('history')">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
-                    stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round"
-                        d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z" />
-                </svg>
-                <p class="hidden md:block">History</p>
             </div>
         </div>
     </nav>
     <main class="w-full">
-        <div
-            class="flex md:flex-row flex-col items-center place-content-center md:space-x-12 md:mt-12 mt-4 text-gray-200">
+        <div class="flex md:flex-row flex-col items-center place-content-center md:space-x-12 md:mt-12 mt-4 text-gray-200">
             <div>
                 <label for="date" class="flex items-center space-x-2 py-3 text-gray-400">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6">
-                        <path
-                            d="M12.75 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM7.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8.25 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM9.75 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM10.5 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM12.75 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM14.25 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 13.5a.75.75 0 100-1.5.75.75 0 000 1.5z" />
-                        <path fill-rule="evenodd"
-                            d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z"
-                            clip-rule="evenodd" />
+                        <path d="M12.75 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM7.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM8.25 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM9.75 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM10.5 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM12 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM12.75 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM14.25 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 17.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 15.75a.75.75 0 100-1.5.75.75 0 000 1.5zM15 12.75a.75.75 0 11-1.5 0 .75.75 0 011.5 0zM16.5 13.5a.75.75 0 100-1.5.75.75 0 000 1.5z" />
+                        <path fill-rule="evenodd" d="M6.75 2.25A.75.75 0 017.5 3v1.5h9V3A.75.75 0 0118 3v1.5h.75a3 3 0 013 3v11.25a3 3 0 01-3 3H5.25a3 3 0 01-3-3V7.5a3 3 0 013-3H6V3a.75.75 0 01.75-.75zm13.5 9a1.5 1.5 0 00-1.5-1.5H5.25a1.5 1.5 0 00-1.5 1.5v7.5a1.5 1.5 0 001.5 1.5h13.5a1.5 1.5 0 001.5-1.5v-7.5z" clip-rule="evenodd" />
                     </svg>
                     <p class="font-semibold text-xl">Date</p>
                 </label>
-                <input id="date" class="cursor-pointer bg-slate-800 rounded-xl p-5 font-semibold text-xl text-gray-300"
-                    type="date" />
+                <input id="date" class="cursor-pointer bg-slate-800 rounded-xl p-5 font-semibold text-xl text-gray-300" type="date" />
             </div>
             <div>
                 <label for="time" class="flex items-center space-x-2 py-3 text-gray-400">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6">
-                        <path fill-rule="evenodd"
-                            d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z"
-                            clip-rule="evenodd" />
+                        <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM12.75 6a.75.75 0 00-1.5 0v6c0 .414.336.75.75.75h4.5a.75.75 0 000-1.5h-3.75V6z" clip-rule="evenodd" />
                     </svg>
                     <p class="font-semibold text-xl">Time</p>
                 </label>
                 <div class="flex items-center space-x-3 text-gray-300">
-                    <input id="time"
-                        class="cursor-pointer bg-slate-800 rounded-xl p-5 text-xl text-gray-300 font-semibold"
-                        type="time" />
+                    <input id="time" class="cursor-pointer bg-slate-800 rounded-xl p-5 text-xl text-gray-300 font-semibold" type="time" />
                 </div>
             </div>
         </div>
@@ -95,12 +75,9 @@
         <div class="flex w-full items-center gap-4 flex-wrap my-12 place-content-center text-gray-300 " id="selections">
             <!-- Javascript Inserted -->
         </div>
-        <div onclick="toggleBar('howto')"
-            class="m-auto text-gray-300 border-2 rounded-lg border-gray-400 space-x-1 p-3 px-6 w-max flex hover:bg-slate-700 cursor-pointer">
+        <div onclick="{toggleBar('howto'); window.scrollTo({top: 0, behavior: 'smooth'});}" class="m-auto text-gray-300 border-2 rounded-lg border-gray-400 space-x-1 p-3 px-6 w-max flex hover:bg-slate-700 cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                <path fill-rule="evenodd"
-                    d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
-                    clip-rule="evenodd" />
+                <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" />
             </svg>
             <p>How to use?</p>
         </div>
@@ -109,27 +86,19 @@
         <div>
             This Website is not made or Affiliated by and with Discord!
             <br>
-            All Legal requests and claims may only be directed towards <a class="border-b-2 border-gray-400"
-                href="https://inspectorre.xyz">inspectorre.xyz</a>
+            All Legal requests and claims may only be directed towards <a class="border-b-2 border-gray-400" href="https://inspectorre.xyz">inspectorre.xyz</a>
         </div>
         <div class="flex space-x-3 items-center">
-            <div
-                class="bg-gray-700 p-3 rounded-md hover:bg-gray-600 cursor-not-allowed text-gray-300 flex space-x-1 relative group">
+            <div class="bg-gray-700 p-3 rounded-md hover:bg-gray-600 cursor-not-allowed text-gray-300 flex space-x-1 relative group">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                    <path fill-rule="evenodd"
-                        d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM6.262 6.072a8.25 8.25 0 1010.562-.766 4.5 4.5 0 01-1.318 1.357L14.25 7.5l.165.33a.809.809 0 01-1.086 1.085l-.604-.302a1.125 1.125 0 00-1.298.21l-.132.131c-.439.44-.439 1.152 0 1.591l.296.296c.256.257.622.374.98.314l1.17-.195c.323-.054.654.036.905.245l1.33 1.108c.32.267.46.694.358 1.1a8.7 8.7 0 01-2.288 4.04l-.723.724a1.125 1.125 0 01-1.298.21l-.153-.076a1.125 1.125 0 01-.622-1.006v-1.089c0-.298-.119-.585-.33-.796l-1.347-1.347a1.125 1.125 0 01-.21-1.298L9.75 12l-1.64-1.64a6 6 0 01-1.676-3.257l-.172-1.03z"
-                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zM6.262 6.072a8.25 8.25 0 1010.562-.766 4.5 4.5 0 01-1.318 1.357L14.25 7.5l.165.33a.809.809 0 01-1.086 1.085l-.604-.302a1.125 1.125 0 00-1.298.21l-.132.131c-.439.44-.439 1.152 0 1.591l.296.296c.256.257.622.374.98.314l1.17-.195c.323-.054.654.036.905.245l1.33 1.108c.32.267.46.694.358 1.1a8.7 8.7 0 01-2.288 4.04l-.723.724a1.125 1.125 0 01-1.298.21l-.153-.076a1.125 1.125 0 01-.622-1.006v-1.089c0-.298-.119-.585-.33-.796l-1.347-1.347a1.125 1.125 0 01-.21-1.298L9.75 12l-1.64-1.64a6 6 0 01-1.676-3.257l-.172-1.03z" clip-rule="evenodd" />
                 </svg>
                 <p class="hidden md:block" id="timezone"></p>
-                <p class="hidden bg-black p-2 rounded-lg -top-12 left-0 right-0 mx-auto group-hover:inline-block md:group-hover:hidden absolute min-w-max"
-                    id="timezone_tooltip"></p>
+                <p class="hidden bg-black p-2 rounded-lg -top-12 left-0 right-0 mx-auto group-hover:inline-block md:group-hover:hidden absolute min-w-max" id="timezone_tooltip"></p>
             </div>
-            <div class="bg-gray-700 p-3 rounded-md hover:bg-gray-600 cursor-pointer text-gray-300 flex space-x-1"
-                onclick="window.open('https://github.com/inspectorrex/discordtimestamp/issues/new');">
+            <div class="bg-gray-700 p-3 rounded-md hover:bg-gray-600 cursor-pointer text-gray-300 flex space-x-1" onclick="window.open('https://github.com/inspectorrex/discordtimestamp/issues/new');">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6">
-                    <path fill-rule="evenodd"
-                        d="M3 2.25a.75.75 0 01.75.75v.54l1.838-.46a9.75 9.75 0 016.725.738l.108.054a8.25 8.25 0 005.58.652l3.109-.732a.75.75 0 01.917.81 47.784 47.784 0 00.005 10.337.75.75 0 01-.574.812l-3.114.733a9.75 9.75 0 01-6.594-.77l-.108-.054a8.25 8.25 0 00-5.69-.625l-2.202.55V21a.75.75 0 01-1.5 0V3A.75.75 0 013 2.25z"
-                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M3 2.25a.75.75 0 01.75.75v.54l1.838-.46a9.75 9.75 0 016.725.738l.108.054a8.25 8.25 0 005.58.652l3.109-.732a.75.75 0 01.917.81 47.784 47.784 0 00.005 10.337.75.75 0 01-.574.812l-3.114.733a9.75 9.75 0 01-6.594-.77l-.108-.054a8.25 8.25 0 00-5.69-.625l-2.202.55V21a.75.75 0 01-1.5 0V3A.75.75 0 013 2.25z" clip-rule="evenodd" />
                 </svg>
                 <p class="hidden md:block">Report Issue</p>
             </div>
@@ -142,23 +111,17 @@
     <!-- Sidebars -->
     <!-- Timestamps Explained -->
     <div class="min-w-full min-h-screen absolute hidden" id="sidebar"></div>
-    <div class="hidden animate-fly-in-right text-gray-300 bg-slate-800 w-full lg:w-1/2 xl:w-1/3 min-h-full fixed right-0 p-8"
-        id="howto_deep">
+    <div class="animate-fly-in-right text-gray-300 bg-slate-800 min-h-full w-full lg:w-1/2 xl:w-1/3 right-0 hidden absolute p-8" id="howto_deep">
         <div class="w-full flex justify-between items-center">
             <p class="text-2xl font-semibold">Timestamps Explained</p>
-            <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleBar('howto_deep')" viewBox="0 0 24 24"
-                fill="currentColor" class="w-10 text-gray-400 hover:text-gray-300 cursor-pointer">
-                <path fill-rule="evenodd"
-                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                    clip-rule="evenodd" />
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleBar('howto_deep')" viewBox="0 0 24 24" fill="currentColor" class="w-10 text-gray-400 hover:text-gray-300 cursor-pointer">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
             </svg>
         </div>
         <div class="w-full flex space-x-3 border-orange-500 border-2 rounded-lg p-4 mt-8">
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                    <path fill-rule="evenodd"
-                        d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z"
-                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" />
                 </svg>
             </div>
             <p>
@@ -194,15 +157,12 @@
         <div class="mt-8 p-4 bg-slate-900 rounded-md">
             <div class="w-full p-2 bg-slate-800 flex space-x-2">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
-                    <path fill-rule="evenodd"
-                        d="M2.25 6a3 3 0 013-3h13.5a3 3 0 013 3v12a3 3 0 01-3 3H5.25a3 3 0 01-3-3V6zm3.97.97a.75.75 0 011.06 0l2.25 2.25a.75.75 0 010 1.06l-2.25 2.25a.75.75 0 01-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 010-1.06zm4.28 4.28a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z"
-                        clip-rule="evenodd" />
+                    <path fill-rule="evenodd" d="M2.25 6a3 3 0 013-3h13.5a3 3 0 013 3v12a3 3 0 01-3 3H5.25a3 3 0 01-3-3V6zm3.97.97a.75.75 0 011.06 0l2.25 2.25a.75.75 0 010 1.06l-2.25 2.25a.75.75 0 01-1.06-1.06l1.72-1.72-1.72-1.72a.75.75 0 010-1.06zm4.28 4.28a.75.75 0 000 1.5h3a.75.75 0 000-1.5h-3z" clip-rule="evenodd" />
                 </svg>
                 <p>mybot/timestamp.js</p>
             </div>
             <div class="py-4">
-                <span class="text-blue-500">message</span>.<span class="text-teal-500">reply</span>("<span
-                    class="text-amber-700">Your Reminder will
+                <span class="text-blue-500">message</span>.<span class="text-teal-500">reply</span>("<span class="text-amber-700">Your Reminder will
                     alert you
                     &lt;t:2396027640:R&gt;</span>");
                 <br><br>
@@ -212,22 +172,16 @@
         </div>
     </div>
     <!-- Howto -->
-    <div class="hidden animate-fly-in-right text-gray-300 bg-slate-800 w-full md:w-1/3 min-h-screen fixed right-0 p-8"
-        id="howto">
+    <div class="hidden animate-fly-in-right text-gray-300 bg-slate-800 w-full min-h-screen md:w-1/3 absolute right-0 p-8" id="howto">
         <div class="w-full flex justify-between items-center">
             <p class="text-2xl font-semibold">How to use this Website</p>
-            <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleBar('howto')" viewBox="0 0 24 24" fill="currentColor"
-                class="w-10 text-gray-400 hover:text-gray-300 cursor-pointer">
-                <path fill-rule="evenodd"
-                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                    clip-rule="evenodd" />
+            <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleBar('howto')" viewBox="0 0 24 24" fill="currentColor" class="w-10 text-gray-400 hover:text-gray-300 cursor-pointer">
+                <path fill-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z" clip-rule="evenodd" />
             </svg>
         </div>
         <div class="flex items-center space-x-3 mt-8">
             <p class="border-gray-200 text-xl font-bold border-2 rounded-full w-8 h-8 text-center">1</p>
-            <p>Select a <span onclick="datepicker.showPicker()"
-                    class="text-blue-400 font-bold cursor-pointer">Date</span> and <span
-                    onclick="timepicker.showPicker()" class="text-blue-400 font-semibold cursor-pointer">Time</span>
+            <p>Select a <span onclick="datepicker.showPicker()" class="xl:text-blue-400 font-bold cursor-pointer">Date</span> and <span onclick="timepicker.showPicker()" class="xl:text-blue-400 font-semibold cursor-pointer">Time</span>
             </p>
         </div>
         <div class="flex items-center space-x-3 mt-8">
@@ -240,23 +194,6 @@
                 <p>Paste the Timestamp into Discord</p>
             </div>
             <img loading="lazy" alt="Discord Screenshot" class="rounded-xl mt-8" src="assets/screenshot.webp" />
-        </div>
-    </div>
-    <!-- History -->
-    <div class="hidden animate-fly-in-right text-gray-300 bg-slate-800 w-full md:w-1/3 min-h-screen fixed right-0 p-8"
-        id="history">
-        <div class="w-full flex justify-between items-center">
-            <p class="text-2xl font-semibold">Timestamp History</p>
-            <svg xmlns="http://www.w3.org/2000/svg" onclick="toggleBar('howto')" viewBox="0 0 24 24" fill="currentColor"
-                class="w-10 text-gray-400 hover:text-gray-300 cursor-pointer">
-                <path fill-rule="evenodd"
-                    d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm-1.72 6.97a.75.75 0 10-1.06 1.06L10.94 12l-1.72 1.72a.75.75 0 101.06 1.06L12 13.06l1.72 1.72a.75.75 0 101.06-1.06L13.06 12l1.72-1.72a.75.75 0 10-1.06-1.06L12 10.94l-1.72-1.72z"
-                    clip-rule="evenodd" />
-            </svg>
-        </div>
-        <div class="flex space-x-2 mt-5">
-            <input type="checkbox" />
-            <p class="text-gray-400 font-semibold">Dont store my History</p>
         </div>
     </div>
     <script defer src="assets/js/sidebar.js"></script>
