@@ -1,4 +1,4 @@
-let show_events_in_future_days = localStorage.getItem("days_advanced") || 35;
+let show_events_in_future_days = Math.min(localStorage.getItem("days_advanced") || 35, 300);
 
 let selections = {
     "christmas_eve": {
@@ -58,10 +58,57 @@ let selections = {
     }
 }
 
+let advanced_days_input = document.getElementById("advanced_days_input");
+
+advanced_days_input.addEventListener("input", (e) => {
+    console.log("Updated Number");
+    let current = new Date();
+    let value = e.target.value;
+    localStorage.setItem("days_advanced", Math.min(value, 300));
+    show_events_in_future_days = Math.min(value, 300);
+
+    let parent = document.getElementById("quickselections");
+    parent.replaceChildren();
+
+    let days_in_advance = new Date().getTime() + (1000 * 60 * 60 * 24 * show_events_in_future_days);
+    advanced_days_input.value = show_events_in_future_days;
+
+    Object.keys(selections).forEach(key => {
+        let item = selections[key];
+
+        let manuelldate = item.date.split("/");
+        let month = parseInt(manuelldate[0]);
+        let day = parseInt(manuelldate[1]);
+        let year = new Date().getFullYear();
+
+        if ((current.getMonth() + 1) > month || (current.getMonth() + 1) == month && current.getDate() > day) {
+            year++
+        }
+
+        if (new Date(year, (month - 1), day) - days_in_advance > 0) {
+            return;
+        }
+
+        item.status = true;
+        let div = document.createElement("div");
+        div.classList.add("border-2", "border-slate-700", "text-gray-400", "border-gray-600", "rounded-xl", "hover:bg-slate-600", "w-max", "p-2", "cursor-pointer", "select-none");
+        div.id = key;
+        div.innerText = selections[key].name;
+        parent.appendChild(div);
+
+        div.addEventListener("click", () => {
+            datepicker.value = `${year}-${month < 10 ? "0" + month : month}-${day < 10 ? "0" + day : day}`;
+            timepicker.value = "00:00";
+            updateTimes();
+        });
+    })
+});
+
 window.addEventListener("load", function () {
     let current = new Date();
     let parent = document.getElementById("quickselections");
     let days_in_advance = new Date().getTime() + (1000 * 60 * 60 * 24 * show_events_in_future_days);
+    advanced_days_input.value = show_events_in_future_days;
 
     Object.keys(selections).forEach(key => {
         let item = selections[key];

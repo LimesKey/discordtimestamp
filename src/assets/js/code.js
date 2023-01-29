@@ -1,10 +1,10 @@
 const datepicker = document.getElementById("date");
 const timepicker = document.getElementById("time");
 
-datepicker.addEventListener("change", () => {
+datepicker.addEventListener("input", () => {
     updateTimes();
 })
-timepicker.addEventListener("change", () => {
+timepicker.addEventListener("input", () => {
     updateTimes();
 })
 datepicker.addEventListener("click", (e) => {
