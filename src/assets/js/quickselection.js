@@ -61,7 +61,6 @@ let selections = {
 let advanced_days_input = document.getElementById("advanced_days_input");
 
 advanced_days_input.addEventListener("input", (e) => {
-    console.log("Updated Number");
     let current = new Date();
     let value = e.target.value;
     localStorage.setItem("days_advanced", Math.min(value, 300));
