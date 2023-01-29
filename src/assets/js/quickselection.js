@@ -50,6 +50,11 @@ let selections = {
         name: "Independence Day",
         date: "07/04",
         status: false
+    },
+    "groundhoog_day": {
+        name: "🦦 Groundhog Day",
+        date: "02/02",
+        status: false
     }
 }
 
