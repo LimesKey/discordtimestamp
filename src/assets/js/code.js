@@ -16,37 +16,30 @@ timepicker.addEventListener("click", (e) => {
 
 let timestamps = {
     'relative': {
-        name: "Relative",
         stamp: "<t:stamp:R>",
         display: { style: `long`, }
     },
     'short_time': {
-        name: "Short Time",
         stamp: "<t:stamp:t>",
         display: { timeStyle: 'short' }
     },
     'long_time': {
-        name: "Long Time",
         stamp: "<t:stamp:T>",
         display: { timeStyle: 'medium' }
     },
     'short_date': {
-        name: "Short Date",
         stamp: "<t:stamp:d>",
         display: { dateStyle: 'short' }
     },
     'long_date': {
-        name: "Long Date",
         stamp: "<t:stamp:D>",
         display: { dateStyle: 'long' }
     },
     'long_date_short_time': {
-        name: "Long Date with Short Time",
         stamp: "<t:stamp:f>",
         display: { dateStyle: 'long', timeStyle: 'short' }
     },
     'long_date_weekday_short_time': {
-        name: "Long Date with Day of the Week, Short Time",
         stamp: "<t:stamp:F>",
         display: { dateStyle: 'full', timeStyle: 'short' }
     }
@@ -58,21 +51,8 @@ window.addEventListener("load", function () {
     timepicker.value = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
     let selections = document.getElementById("selections");
     Object.keys(timestamps).forEach(key => {
-        let current = timestamps[key];
-        let div = document.createElement("div");
-        div.classList.add("w-2/3", "md:w-max", "p-7", "bg-slate-800", "rounded-lg", "cursor-pointer", "hover:scale-105", "hover:bg-slate-700", "transition-colors", "duration-300")
-        div.id = key;
-        let first = document.createElement("p");
-        first.classList.add("text-center", "text-md", "bg-slate-700", "p-2", "rounded-lg", "font-semibold");
-        div.appendChild(first);
-        let second = document.createElement("p");
-        second.classList.add("text-gray-400", "text-xs", "mt-1");
-        div.appendChild(second);
-        second.innerText = current.name;
-
-        selections.appendChild(div);
-
-        div.addEventListener("click", async () => {
+        let element = document.getElementById(key);
+        element.addEventListener("click", async () => {
             let selectedDate = new Date(datepicker.valueAsNumber + timepicker.valueAsNumber + new Date().getTimezoneOffset() * 60000);
             let ts = selectedDate.getTime().toString();
             await navigator.clipboard.writeText(timestamps[key].stamp.replace("stamp", `${ts.substr(0, ts.length - 3)}`));

@@ -65,17 +65,45 @@
                 </div>
             </div>
         </div>
-        <script src="assets/js/code.js"></script>
         <script defer src="assets/js/quickselection.js"></script>
+        <script src="assets/js/code.js"></script>
         <div class="m-8 text-gray-300 font-semibold">
             <div class="flex items-center flex-wrap gap-4 place-content-center" id="quickselections">
                 <!-- Javascript Inserted -->
             </div>
         </div>
-        <div class="flex w-full items-center gap-4 flex-wrap mt-18 place-content-center text-gray-300 min-h-screen md:min-h-max md:h-52" id="selections">
-            <!-- Javascript Inserted -->
+        <div class="flex w-full items-center gap-4 flex-wrap my-12 place-content-center text-gray-300" id="selections">
+            <div id="relative" class="w-2/3 md:w-max p-7 bg-slate-800 rounded-lg cursor-pointer hover:scale-105 hover:bg-slate-700 transition-colors duration-300">
+                <p class="text-center text-md bg-slate-700 p-2 rounded-lg font-semibold">Loading...</p>
+                <p class="text-gray-400 text-xs mt-1">Relative</p>
+            </div>
+            <div id="short_time" class="w-2/3 md:w-max p-7 bg-slate-800 rounded-lg cursor-pointer hover:scale-105 hover:bg-slate-700 transition-colors duration-300">
+                <p class="text-center text-md bg-slate-700 p-2 rounded-lg font-semibold">Loading...</p>
+                <p class="text-gray-400 text-xs mt-1">Short Time</p>
+            </div>
+            <div id="long_time" class="w-2/3 md:w-max p-7 bg-slate-800 rounded-lg cursor-pointer hover:scale-105 hover:bg-slate-700 transition-colors duration-300">
+                <p class="text-center text-md bg-slate-700 p-2 rounded-lg font-semibold">Loading...</p>
+                <p class="text-gray-400 text-xs mt-1">Long Time</p>
+            </div>
+            <div id="short_date" class="w-2/3 md:w-max p-7 bg-slate-800 rounded-lg cursor-pointer hover:scale-105 hover:bg-slate-700 transition-colors duration-300">
+                <p class="text-center text-md bg-slate-700 p-2 rounded-lg font-semibold">Loading...</p>
+                <p class="text-gray-400 text-xs mt-1">Short Date</p>
+            </div>
+            <div id="long_date" class="w-2/3 md:w-max p-7 bg-slate-800 rounded-lg cursor-pointer hover:scale-105 hover:bg-slate-700 transition-colors duration-300">
+                <p class="text-center text-md bg-slate-700 p-2 rounded-lg font-semibold">Loading...</p>
+                <p class="text-gray-400 text-xs mt-1">Long Date</p>
+            </div>
+            <div id="long_date_short_time" class="w-2/3 md:w-max p-7 bg-slate-800 rounded-lg cursor-pointer hover:scale-105 hover:bg-slate-700 transition-colors duration-300">
+                <p class="text-center text-md bg-slate-700 p-2 rounded-lg font-semibold">Loading...</p>
+                <p class="text-gray-400 text-xs mt-1">Long Date with Short Time</p>
+            </div>
+            <div id="long_date_weekday_short_time" class="w-2/3 md:w-max p-7 bg-slate-800 rounded-lg cursor-pointer hover:scale-105 hover:bg-slate-700 transition-colors duration-300">
+                <p class="text-center text-md bg-slate-700 p-2 rounded-lg font-semibold"></p>
+                <p class="text-gray-400 text-xs mt-1">Long Date with Day of the Week, Short Time</p>
+            </div>
         </div>
-        <div onclick="{toggleBar('howto'); window.scrollTo({top: 0, behavior: 'smooth'});}" class="m-auto text-gray-300 border-2 rounded-lg border-gray-400 space-x-1 p-3 px-6 w-max flex hover:bg-slate-700 cursor-pointer">
+
+        <div onclick=" {toggleBar('howto'); window.scrollTo({top: 0, behavior: 'smooth' });}" class="m-auto text-gray-300 border-2 rounded-lg border-gray-400 space-x-1 p-3 px-6 w-max flex hover:bg-slate-700 cursor-pointer">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
                 <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" />
             </svg>
