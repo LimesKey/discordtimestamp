@@ -5,6 +5,7 @@
 @font-face {
     font-family: Poppins;
     src: url('Poppins.ttf');
+    font-display: swap;
 }
 
 @layer base {

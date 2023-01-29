@@ -10,6 +10,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="author" content="InspectorRex">
     <link rel="shortcut icon" href="assets/logo.webp" type="image/webp">
+    <link rel="shortcut icon" href="assets/logo.png" type="image/png">
     <meta content="by InspectorRex" property="og:site_name">
     <meta content="Discord TimeStamp Generator" property="og:title">
     <meta content="Easily generate a Dynamic date-time display for your Discord Messages" property="og:description">
@@ -24,7 +25,7 @@
     </notification>
     <nav class="flex md:px-16 p-8 items-center justify-between">
         <div class="flex space-x-3 items-center">
-            <img class="w-8 md:w-14 md:h-14 select-none pointer-events-none" src="assets/logo.webp" alt="Logo">
+            <img width="32" height="32" class="w-8 h-8 md:w-14 md:h-14 select-none pointer-events-none object-contain" src="assets/logo.webp" alt="Logo">
             <div class="items-center text-gray-200 ">
                 <p class="md:font-semibold text-sm md:text-lg">Discord Timestamp Generator</p>
                 <p class="hidden md:block text-sm">Easily generate a Dynamic date-time display for your Discord
@@ -67,7 +68,7 @@
         <script src="assets/js/code.js"></script>
         <script defer src="assets/js/quickselection.js"></script>
         <div class="m-8 text-gray-300 font-semibold">
-            <div class="flex items-center flex-wrap gap-2 place-content-center" id="quickselections">
+            <div class="flex items-center flex-wrap gap-4 place-content-center" id="quickselections">
                 <!-- Javascript Inserted -->
             </div>
         </div>
@@ -81,11 +82,10 @@
             <p>How to use?</p>
         </div>
     </main>
-    <footer class="text-gray-400 flex justify-between p-8 items-center text-sm md:text-base mt-auto">
-        <div>
-            This Website is not made or Affiliated by and with Discord!
-            <br>
-            All Legal requests and claims may only be directed towards <a class="border-b-2 border-gray-400" href="https://inspectorre.xyz">inspectorre.xyz</a>
+    <footer class="text-gray-400 flex flex-col-reverse lg:flex-row justify-between p-8 items-center text-sm md:text-base mt-auto">
+        <div class="mt-8 lg:mt-0">
+            <p>This Website is not made or Affiliated by and with Discord!</p>
+            <p>All Legal requests and claims may only be directed towards <a class="border-b-2 border-gray-400" href="https://inspectorre.xyz">inspectorre.xyz</a></p>
         </div>
         <div class="flex space-x-3 items-center">
             <div class="bg-gray-700 p-3 rounded-md hover:bg-gray-600 cursor-not-allowed text-gray-300 flex space-x-1 relative group">
@@ -103,8 +103,9 @@
             </div>
         </div>
         <script>
-            document.getElementById("timezone").innerText += Intl.DateTimeFormat().resolvedOptions().timeZone;
-            document.getElementById("timezone_tooltip").innerText += Intl.DateTimeFormat().resolvedOptions().timeZone;
+            let timezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            document.getElementById("timezone").innerText += timezone;
+            document.getElementById("timezone_tooltip").innerText += timezone;
         </script>
     </footer>
     <!-- Sidebars -->

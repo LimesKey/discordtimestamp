@@ -52,7 +52,7 @@ let timestamps = {
     }
 }
 
-const onload = _ => {
+window.addEventListener("load", function () {
     let now = new Date();
     datepicker.value = `${now.getFullYear()}-${(now.getMonth() + 1).toString().padStart(2, '0')}-${now.getDate().toString().padStart(2, '0')}`;
     timepicker.value = `${now.getHours().toString().padStart(2, '0')}:${now.getMinutes().toString().padStart(2, '0')}`;
@@ -83,23 +83,26 @@ const onload = _ => {
         });
     })
     updateTimes();
-    // Setup QuickSelection Pins
-    quickselectionsetup();
-}
-window.onload = onload;
+});
 
 function updateTimes() {
     const selectedDate = new Date(datepicker.valueAsNumber + timepicker.valueAsNumber + new Date().getTimezoneOffset() * 60000);
     Object.keys(timestamps).forEach(key => {
         if (key === 'relative') {
-            let formatter = new Intl.RelativeTimeFormat(`en`, timestamps[key].display);
-            let format = automaticRelativeDifference(selectedDate);
-            document.getElementById(key).firstElementChild.textContent = formatter.format(format.duration, format.unit);
+            updateRelative(key)
         } else {
             let formatter = new Intl.DateTimeFormat(navigator.language || 'en', timestamps[key].display || {});
             document.getElementById(key).firstElementChild.textContent = formatter.format(selectedDate);
         }
     })
+    checkStatus(selectedDate);
+}
+
+function updateRelative(key) {
+    const selectedDate = new Date(datepicker.valueAsNumber + timepicker.valueAsNumber + new Date().getTimezoneOffset() * 60000);
+    let formatter = new Intl.RelativeTimeFormat(`en`, timestamps[key].display);
+    let format = automaticRelativeDifference(selectedDate);
+    document.getElementById(key).firstElementChild.textContent = formatter.format(format.duration, format.unit);
 }
 
 // Calculate Time Left or Passed
@@ -123,7 +126,7 @@ function automaticRelativeDifference(d) {
     }
     if (absDiff < 60) {
         setTimeout(() => {
-            updateTimes();
+            updateRelative("relative");
         }, 1000);
     }
     return { duration: parseInt(diff), unit: 'seconds' };
